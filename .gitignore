@@ -166,7 +166,7 @@ jspm_packages/
 
 # dotenv environment variables file
 .env.test
-
+!.env
 # Serverless directories
 .serverless/
 
@@ -212,4 +212,3 @@ backend/.dockerignore
 
 # Composer files
 backend/composer.lock
-README.md
