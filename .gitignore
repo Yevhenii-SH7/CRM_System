@@ -122,6 +122,7 @@ docker-compose.override.yml
 # Documentation files (if not needed in repo)
 *.md
 !README.md
+!README_DE.md
 !LICENSE
 
 # Local database exports
