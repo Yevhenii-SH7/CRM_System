@@ -68,6 +68,7 @@ export interface Task {
   title: string;
   description?: string;
   status_id?: number;
+  status?: string;
   project_id?: number;
   assigned_to?: number;
   due_date?: string;

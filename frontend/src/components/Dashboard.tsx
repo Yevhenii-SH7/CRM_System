@@ -17,7 +17,7 @@ import {
   AccessTime,
 } from '@mui/icons-material';
 import get from 'lodash-es/get';
-import { dashboardAPI } from '../services/api';
+import { dashboardAPI, Task } from '../services/api';
 import MetricCard from './dashboard/MetricCard';
 import RecentTasksTable from './dashboard/RecentTasksTable';
 import ActiveProjectsList from './dashboard/ActiveProjectsList';
@@ -71,12 +71,7 @@ interface ChartData {
   monthlyEarnings?: Array<{ date: string; earnings: number }>;
 }
 
-interface TaskData {
-  id: number;
-  title: string;
-  priority: string;
-  status: string;
-}
+
 
 interface ProjectData {
   id: number;
@@ -105,9 +100,12 @@ function Dashboard({ onNavigateToTasks, onNavigateToProjects, onCreateTask, onCr
   const [chartData, setChartData] = useState<ChartData>({});
 
   const priorityColors = useMemo(() => ({
-    Low: '#66bb6a',
-    Medium: '#ff9800',
-    High: '#f44336'
+    'Low': '#66bb6a',
+    'Medium': '#ff9800',
+    'High': '#f44336',
+    'Niedrig': '#66bb6a',
+    'Mittel': '#ff9800',
+    'Hoch': '#f44336'
   }), []);
 
   const getColorByString = useCallback((str: string): string => {
@@ -124,6 +122,9 @@ function Dashboard({ onNavigateToTasks, onNavigateToProjects, onCreateTask, onCr
       'To Do': '#2196F3',
       'In Progress': '#FF9800',
       'Done': '#4CAF50',
+      'Zu erledigen': '#2196F3',
+      'In Bearbeitung': '#FF9800',
+      'Erledigt': '#4CAF50',
       'Test Project': '#2196F3',
       'CRM System Development': '#4CAF50',
       'Mobile App Development': '#FF5722',
@@ -160,18 +161,18 @@ function Dashboard({ onNavigateToTasks, onNavigateToProjects, onCreateTask, onCr
 
       // Ensure tasksData is an array before mapping
       const tasksArray = Array.isArray(tasksData) ? tasksData : [];
-      setRecentTasks(tasksArray.slice(0, 5).map((task: TaskData) => ({
+      setRecentTasks(tasksArray.slice(0, 5).map((task: Task) => ({
         id: get(task, 'id', 0),
-        title: get(task, 'title', 'Unknown Task'),
-        priority: get(task, 'priority', 'Medium'),
-        status: get(task, 'status', 'To Do')
+        title: get(task, 'title', 'Unbekannte Aufgabe'),
+        priority: get(task, 'priority', 'Mittel'),
+        status: get(task, 'status', 'Zu erledigen')
       })));
 
       // Ensure projectsData is an array before mapping
       const projectsArray = Array.isArray(projectsData) ? projectsData : [];
       setActiveProjects(projectsArray.slice(0, 5).map((project: ProjectData) => ({
         id: get(project, 'id', 0),
-        title: get(project, 'title', 'Unknown Project'),
+        title: get(project, 'title', 'Unbekanntes Projekt'),
         completed_tasks: get(project, 'completed_tasks', 0),
         total_tasks: get(project, 'total_tasks', 0)
       })));
@@ -191,7 +192,7 @@ function Dashboard({ onNavigateToTasks, onNavigateToProjects, onCreateTask, onCr
         .catch(() => setChartData({ tasksByStatus: [], tasksByProject: [], upcomingDeadlines: [], monthlyEarnings: [] }));
     } catch (error) {
       console.error('Failed to load dashboard data:', error);
-      setError('Failed to load dashboard data');
+      setError('Fehler beim Laden der Dashboard-Daten');
       setLoading(false);
     }
   }, []);
@@ -293,7 +294,7 @@ function Dashboard({ onNavigateToTasks, onNavigateToProjects, onCreateTask, onCr
           <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError('')}>
             {error}
             <Button onClick={() => loadDashboardData()} sx={{ ml: 2 }}>
-              Retry
+              Wiederholen
             </Button>
           </Alert>
         )}

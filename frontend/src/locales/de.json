@@ -6,8 +6,6 @@
     "edit": "Bearbeiten",
     "create": "Erstellen",
     "close": "Schließen",
-    "loading": "Laden...",
-    "search": "Suchen",
     "filter": "Filtern",
     "actions": "Aktionen",
     "status": "Status",
@@ -16,19 +14,17 @@
     "name": "Name",
     "email": "E-Mail",
     "phone": "Telefon",
-    "address": "Adresse",
+    
     "description": "Beschreibung",
     "title": "Titel",
     "language": "Sprache",
     "update": "Aktualisieren",
     "firstName": "Vorname",
     "lastName": "Nachname",
-    "role": "Rolle",
+      "search": "Suchen",
     "user": "Benutzer",
-    "admin": "Administrator",
     "manager": "Verwalter",
     "required": "*",
-    "search": "Suchen",
     "all": "Alle",
     "notSelected": "Nicht Ausgewählt",
     "unassigned": "Nicht Zugewiesen"
@@ -59,7 +55,7 @@
     "signUp": "Registrieren"
   },
   "dashboard": {
-    "title": "Dashboard",
+  "title": "Dashboard",
     "totalTasks": "Aufgaben Gesamt",
     "completedTasks": "Erledigte Aufgaben",
     "activeProjects": "Aktive Projekte",
@@ -86,7 +82,10 @@
     "addProject": "Projekt Hinzufügen",
     "addClient": "Kunde Hinzufügen",
     "noProjects": "Keine Projekte",
-    "totalProjects": "Projekte Gesamt"
+    "totalProjects": "Projekte Gesamt",
+    "loadError": "Dashboard-Daten konnten nicht geladen werden",
+  "unknownTask": "Unbekannte Aufgabe",
+  "unknownProject": "Unbekanntes Projekt"
   },
   "tasks": {
     "title": "Meine Aufgaben",
@@ -117,6 +116,7 @@
   },
   "projects": {
     "title": "Projekte",
+      "loadError": "Dashboard-Daten konnten nicht geladen werden",
     "createProject": "Projekt Erstellen",
     "editProject": "Projekt Bearbeiten",
     "projectTitle": "Projekttitel",
@@ -153,7 +153,7 @@
     "system": "System",
     "users": "Benutzer",
     "notifications": "Benachrichtigungen",
-    "language": "Sprache",
+  "save": "Speichern",
     "theme": "Design",
     "dateFormat": "Datumsformat",
     "timezone": "Zeitzone",
@@ -184,7 +184,8 @@
     "userUpdated": "Benutzer erfolgreich aktualisiert",
     "welcome": "Willkommen",
     "role": "Rolle",
-    "guestUser": "Gast-Benutzer"
+    "guestUser": "Gast-Benutzer",
+    "retry": "Wiederholen"
   },
   "calendar": {
     "title": "Kalender",
@@ -212,5 +213,18 @@
     "kanbanFeature": "Kanban-Board",
     "mobileFeature": "Mobile Anpassung",
     "openSource": "Open-Source-Projekt"
+  },
+  "status": {
+    "todo": "Offen",
+      "guestUser": "Gast-Benutzer",
+      "retry": "Wiederholen"
+  },
+  "project": {
+    "testProject": "Testprojekt",
+    "crmSystemDevelopment": "CRM-System Entwicklung",
+    "mobileAppDevelopment": "Mobile App Entwicklung",
+    "apiIntegrationProject": "API-Integrationsprojekt",
+    "websiteRedesign": "Website-Neugestaltung",
+    "databaseOptimization": "Datenbankoptimierung"
   }
 }

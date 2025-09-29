@@ -40,6 +40,7 @@ const QuickActionsPanel = React.memo(({ onCreateTask, onCreateProject }: QuickAc
           <Button
             variant="outlined"
             startIcon={<SearchIcon />}
+            onClick={() => alert('Under development')}
             sx={{
               fontFamily: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
             }}

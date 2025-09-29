@@ -144,7 +144,7 @@ function BasicCharts({ chartData, getStatusColor }: BasicChartsProps) {
                   tickSize: 5,
                   tickPadding: 5,
                   tickRotation: 0,
-                  legend: 'Tasks',
+                  legend: t('common.tasks'),
                   legendPosition: 'middle',
                   legendOffset: -50
                 }}
@@ -201,7 +201,7 @@ function BasicCharts({ chartData, getStatusColor }: BasicChartsProps) {
                   tickSize: 5,
                   tickPadding: 5,
                   tickRotation: -45,
-                  legend: 'Date',
+                  legend: t('common.date'),
                   legendPosition: 'middle',
                   legendOffset: 40
                 }}

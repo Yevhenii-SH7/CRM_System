@@ -7,7 +7,6 @@
     "create": "Create",
     "close": "Close",
     "loading": "Loading...",
-    "search": "Search",
     "filter": "Filter",
     "actions": "Actions",
     "status": "Status",
@@ -36,8 +35,7 @@
   "navigation": {
     "dashboard": "Dashboard",
     "tasks": "My Tasks",
-    "projects": "Projects",
-    "clients": "Clients",
+  "projects": "Projects",
     "calendar": "Calendar",
     "settings": "Settings",
     "logout": "Logout",
@@ -59,7 +57,7 @@
     "signUp": "Sign Up"
   },
   "dashboard": {
-    "title": "Dashboard",
+  "title": "Dashboard",
     "totalTasks": "Total Tasks",
     "completedTasks": "Completed Tasks",
     "activeProjects": "Active Projects",
@@ -86,7 +84,10 @@
     "addProject": "Add Project",
     "addClient": "Add Client",
     "noProjects": "No projects",
-    "totalProjects": "Total Projects"
+    "totalProjects": "Total Projects",
+    "loadError": "Failed to load dashboard data",
+  "unknownTask": "Unknown Task",
+  "unknownProject": "Unknown Project"
   },
   "tasks": {
     "title": "My Tasks",
@@ -124,7 +125,7 @@
     "description": "Description",
     "startDate": "Start Date",
     "endDate": "End Date",
-    "client": "Client",
+  "save": "Save",
     "hourlyRate": "Hourly Rate (€)",
     "active": "Active",
     "completed": "Completed",
@@ -156,6 +157,7 @@
     "language": "Language",
     "theme": "Theme",
     "dateFormat": "Date Format",
+    "retry": "Retry",
     "timezone": "Timezone",
     "userInformation": "User Information",
     "changePassword": "Change Password",
@@ -212,5 +214,21 @@
     "kanbanFeature": "Kanban Board",
     "mobileFeature": "Mobile Adaptation",
     "openSource": "Open source project"
+  },
+  "status": {
+  "todo": "To Do",
+  "todoColor": "#F44336",
+  "inProgress": "In Progress",
+  "inProgressColor": "#FF9800",
+  "done": "Done",
+  "doneColor": "#4CAF50"
+  },
+  "project": {
+    "testProject": "Test Project",
+    "crmSystemDevelopment": "CRM System Development",
+    "mobileAppDevelopment": "Mobile App Development",
+    "apiIntegrationProject": "API Integration Project",
+    "websiteRedesign": "Website Redesign",
+    "databaseOptimization": "Database Optimization"
   }
 }
