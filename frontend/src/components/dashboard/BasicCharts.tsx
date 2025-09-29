@@ -44,9 +44,9 @@ function BasicCharts({ chartData, getStatusColor }: BasicChartsProps) {
                 {pieChartDescription}
               </div>
               <ResponsivePie
-                data={tasksByStatus.map(item => ({
-                  id: item.name,
-                  label: item.name,
+                data={tasksByStatus.map((item, idx) => ({
+                  id: `${item.name}-${idx}`,
+                  label: `${item.name}-${idx}`,
                   value: item.value,
                   color: getStatusColor(item.name)
                 }))}
