@@ -1,0 +1,26 @@
+RewriteEngine On
+
+# Handle static assets with correct MIME types
+<FilesMatch "\.(js|mjs|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+    Header always set Cache-Control "public, max-age=31536000"
+</FilesMatch>
+
+# Set correct MIME types for JavaScript modules
+<FilesMatch "\.js$">
+    Header set Content-Type "application/javascript"
+</FilesMatch>
+
+<FilesMatch "\.mjs$">
+    Header set Content-Type "application/javascript"
+</FilesMatch>
+
+# Handle frontend routes - serve index.html for non-API routes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/api\.php
+RewriteRule ^(.*)$ /index.html [L]
+
+# Handle API routes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^/api\.php
+RewriteRule ^(.*)$ /api.php [L,QSA]

@@ -1,0 +1,48 @@
+# Node.js dependencies
+node_modules/
+
+# PHP dependencies
+vendor/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+tmp/
+temp/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env
+!backend/.env.local
+
+# Docker files (except this one)
+docker-compose.yml
+docker-compose.dev.yml
+Dockerfile
+Dockerfile.dev
+
+# Git files
+.git/
+.gitignore
+
+# Testing files
+coverage/
+*.test.js
+*.spec.js
+
+# Documentation
+README.md
+docs/

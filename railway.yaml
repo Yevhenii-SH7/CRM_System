@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: crm-task-planner
+    env: docker
+    dockerfilePath: Dockerfile.railway
+    envVars:
+      - key: JWT_SECRET
+        value: your-super-secret-jwt-key-change-this
+      - key: MYSQLHOST
+        value: mysql-n4y5.railway.internal
+      - key: MYSQLPORT
+        value: "3306"
+      - key: MYSQLDATABASE
+        value: railway
+      - key: MYSQLUSER
+        value: root
+      - key: MYSQLPASSWORD
+        value: jfEIHQsjRNkNNcWExVvTpYECckeTvWWa

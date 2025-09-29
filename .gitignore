@@ -1,0 +1,219 @@
+# CRM Task Planner .gitignore
+
+# Dependencies
+node_modules/
+/vendor/
+
+# Build outputs
+/dist/
+/dist-ssr/
+/build/
+/out/
+/.vite/
+/.next/
+/.nuxt/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment files (except example files)
+.env
+.env.local
+.env.development
+.env.production
+!.env.example
+!.env.development.example
+!.env.production.example
+
+# Database files
+*.sqlite
+*.db
+*.sql.gz
+mysql_data/
+database/*.sql~
+rollback_*.sql
+update_*.sql
+
+# IDE and editor files
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary and cache files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Testing and coverage
+coverage/
+.nyc_output/
+.jest/
+.nyc/
+
+# Typescript
+*.tsbuildinfo
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Local configuration files
+config/local.php
+.env.backup
+
+# Project specific files to ignore
+*.txt
+
+# Debug files
+debug_*.html
+debug_*.php
+debug.log
+
+# XAMPP specific files
+xampp/
+xampp_data/
+
+# Shell script files
+*.sh
+
+# Configuration backup files
+*.config.backup
+
+# User-specific files
+user_data.json
+
+# Cache directories
+.cache/
+
+# Session files
+sessions/
+
+# Upload directories
+uploads/
+
+# API response files
+api_response_*.json
+
+# Test reports
+test-results/
+
+# Docker files
+.docker/
+docker-compose.override.yml
+
+# Documentation files (if not needed in repo)
+!*.md
+!README.md
+!LICENSE
+
+# Local database exports
+local_db_backup.sql
+
+# Vim/neovim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# Emacs
+\#*
+\#*\#
+
+# Temporary database files
+*.db-shm
+*.db-wal
+
+# Development files that shouldn't be committed
+dev_*
+local_*
+development_*
+
+# Package lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+composer.lock
+
+# Runtime data
+*.pid
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variables file
+.env.test
+
+# Serverless directories
+.serverless/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test/
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Firebase cache
+.firebase/
+
+# FuseBox cache
+.fusebox/
+
+# Generated files
+*.min.js
+*.min.css
+
+# Editor backup files
+*~
+
+# Frontend build directories
+frontend/dist/
+frontend/build/
+frontend/out/
+
+# Backend vendor directory
+backend/vendor/
+
+# Database migration backups
+database/migrations/*.sql~
+
+# Docker files
+backend/.dockerignore
+
+# Composer files
+# backend/composer.lock - needed for production
+RENDER_DEPLOY.md
+RENDER_DEPLOY.md
+frontend/scripts/check-translations.cjs
+frontend/src/__tests__/Localization.test.tsx
+frontend/src/__tests__/LocalizationIntegration.test.tsx

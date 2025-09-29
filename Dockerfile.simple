@@ -1,0 +1,31 @@
+FROM php:8.1-apache
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    zip \
+    unzip \
+    && docker-php-ext-install pdo pdo_mysql zip
+
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Copy backend files
+COPY backend/ /var/www/html/
+COPY database/ /var/www/html/database/
+
+# Install PHP dependencies
+WORKDIR /var/www/html
+RUN composer install --no-dev --optimize-autoloader
+
+# Create simple index.html
+RUN echo '<h1>CRM API Ready</h1><p>API available at /api.php</p>' > /var/www/html/public/index.html
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html
+RUN chmod -R 755 /var/www/html
+
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
+
+EXPOSE 80
